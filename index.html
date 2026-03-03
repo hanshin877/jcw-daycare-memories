@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정찬우의 어린이집 추억록 🌸</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&display=swap');
+    :root{--pink:#ffb7c5;--pink-mid:#ffd6df;--text:#5a3a4a;--text-light:#9a7a8a;--shadow:0 4px 20px rgba(255,120,150,0.15);--radius:20px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Nanum Gothic',sans-serif;background:linear-gradient(135deg,#fff0f3 0%,#fff9e6 50%,#f0f8ff 100%);min-height:100vh;color:var(--text);}
+    header{background:linear-gradient(135deg,#ff9ab0,#ffb7c5,#ffd6df);text-align:center;padding:50px 20px 70px;position:relative;overflow:hidden;box-shadow:0 6px 30px rgba(255,100,130,0.3);}
+    header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.15) 0%,transparent 60%);animation:shimmer 4s ease-in-out infinite;}
+    @keyframes shimmer{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,5%)}}
+    .header-emoji{font-size:3.5rem;margin-bottom:12px;display:block;animation:bounce 2s ease-in-out infinite;}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    header h1{font-family:'Nanum Pen Script',cursive;font-size:clamp(2rem,6vw,3.8rem);color:white;text-shadow:2px 3px 8px rgba(180,60,80,0.3);margin-bottom:8px;position:relative;z-index:1;}
+    header p{font-size:.95rem;color:rgba(255,255,255,0.92);font-weight:700;letter-spacing:2px;position:relative;z-index:1;}
+    .header-stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1;}
+    .stat-badge{background:rgba(255,255,255,0.3);border:2px solid rgba(255,255,255,0.5);color:white;padding:6px 16px;border-radius:30px;font-size:.83rem;font-weight:700;backdrop-filter:blur(5px);}
+    .header-decoration{position:absolute;font-size:2rem;opacity:0.35;}
+    .dec1{top:15%;left:8%;animation:float1 3s ease-in-out infinite;}
+    .dec2{top:25%;right:10%;animation:float2 4s ease-in-out infinite;}
+    .dec3{bottom:20%;left:5%;animation:float1 5s ease-in-out infinite;}
+    .dec4{bottom:15%;right:8%;animation:float2 3.5s ease-in-out infinite;}
+    .dec5{top:50%;left:20%;animation:float1 4.5s ease-in-out infinite;}
+    .dec6{top:40%;right:18%;animation:float2 4s ease-in-out infinite;}
+    @keyframes float1{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+    @keyframes float2{0%,100%{transform:translateY(0) rotate(5deg)}50%{transform:translateY(-8px) rotate(-5deg)}}
+    nav{background:white;border-bottom:3px solid var(--pink-mid);position:sticky;top:0;z-index:100;box-shadow:0 2px 15px rgba(255,120,150,0.2);}
+    .nav-inner{max-width:1000px;margin:0 auto;padding:0 12px;}
+    .nav-year-row{display:flex;align-items:center;flex-wrap:wrap;gap:2px;border-bottom:1px solid #ffeef2;padding:2px 0;}
+    .nav-year-row:last-of-type{border-bottom:none;}
+    .nav-year-label{font-size:.7rem;font-weight:800;background:linear-gradient(135deg,#ff9ab0,#ffb7c5);color:white;padding:3px 9px;border-radius:12px;margin-right:4px;white-space:nowrap;flex-shrink:0;}
+    .month-tab{display:flex;flex-direction:column;align-items:center;padding:7px 11px;text-decoration:none;color:var(--text-light);font-size:.73rem;font-weight:700;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.25s;line-height:1.3;}
+    .month-tab:hover,.month-tab.active{color:#e05070;border-bottom-color:#e05070;}
+    .nav-sub{font-size:.62rem;color:var(--text-light);font-weight:400;}
+    .nav-jump-row{display:flex;align-items:center;justify-content:flex-end;padding:5px 0 6px;border-top:1px solid #ffeef2;}
+    .nav-jump-row select{border:2px solid var(--pink-mid);border-radius:20px;padding:4px 10px;font-family:'Nanum Gothic',sans-serif;font-size:.75rem;color:var(--text);background:white;cursor:pointer;outline:none;max-width:180px;}
+    main{max-width:1000px;margin:0 auto;padding:30px 20px 80px;}
+    .month-section{margin-bottom:15px;}
+    .month-header{text-align:center;margin:35px 0 25px;padding:18px 20px;background:linear-gradient(135deg,#fff0f3,#fff9e6);border-radius:var(--radius);border:2px solid var(--pink-mid);scroll-margin-top:65px;}
+    .month-title{font-family:'Nanum Pen Script',cursive;font-size:clamp(1.8rem,5vw,2.6rem);color:#d4506a;}
+    .month-stats{display:block;font-size:.82rem;color:var(--text-light);margin-top:4px;font-weight:700;}
+    .day-section{margin-bottom:50px;scroll-margin-top:65px;background:rgba(255,255,255,0.65);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
+    .day-header{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px;padding-bottom:13px;border-bottom:2px dashed var(--pink-mid);}
+    .day-badge{background:linear-gradient(135deg,#ff9ab0,#ffb7c5);color:white;font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:30px;box-shadow:0 3px 10px rgba(255,100,130,0.35);white-space:nowrap;flex-shrink:0;}
+    .day-title{font-family:'Nanum Pen Script',cursive;font-size:clamp(1.1rem,3.5vw,1.7rem);color:#d4506a;flex:1;min-width:0;}
+    .day-date{font-size:.75rem;color:var(--text-light);white-space:nowrap;flex-shrink:0;}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px;margin-bottom:18px;}
+    .gallery-item{aspect-ratio:1;overflow:hidden;border-radius:11px;cursor:pointer;box-shadow:0 3px 12px rgba(255,120,150,0.15);transition:transform 0.25s,box-shadow 0.25s;position:relative;}
+    .gallery-item:hover{transform:scale(1.04) rotate(0.7deg);box-shadow:0 6px 20px rgba(255,100,130,0.3);}
+    .gallery-item:nth-child(even):hover{transform:scale(1.04) rotate(-0.7deg);}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.25s;}
+    .gallery-item:hover img{filter:brightness(1.06);}
+    .overlay{position:absolute;inset:0;background:rgba(255,100,130,0);display:flex;align-items:center;justify-content:center;transition:background 0.25s;}
+    .gallery-item:hover .overlay{background:rgba(255,100,130,0.12);}
+    .overlay-icon{font-size:1.6rem;opacity:0;transition:opacity 0.25s;}
+    .gallery-item:hover .overlay-icon{opacity:1;}
+    .diary-card{background:white;border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);border-left:5px solid var(--pink);position:relative;overflow:hidden;}
+    .diary-card::before{content:'"';position:absolute;top:-10px;left:12px;font-size:5rem;color:var(--pink-mid);font-family:Georgia,serif;line-height:1;}
+    .diary-label{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;color:#e05070;margin-bottom:11px;text-transform:uppercase;letter-spacing:1px;}
+    .diary-label::after{content:'';flex:1;height:1px;background:var(--pink-mid);}
+    .diary-text{font-size:.91rem;line-height:1.9;color:var(--text);white-space:pre-wrap;position:relative;z-index:1;}
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;}
+    #lightbox.active{display:flex;}
+    .lb-wrapper{display:flex;align-items:center;gap:14px;}
+    .lb-img-wrap{position:relative;display:inline-block;}
+    #lightbox-img{max-width:80vw;max-height:82vh;object-fit:contain;border-radius:10px;box-shadow:0 10px 60px rgba(0,0,0,0.5);display:block;animation:zoomIn 0.25s ease;}
+    @keyframes zoomIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+    .lb-btn{font-size:2rem;color:white;cursor:pointer;background:rgba(255,255,255,0.18);border:none;border-radius:50%;width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+    .lb-btn:hover:not(:disabled){background:rgba(255,100,130,0.55);}
+    .lb-btn:disabled{opacity:0.18;cursor:default;}
+    .lb-close{position:absolute;top:-18px;left:50%;transform:translateX(-50%);color:white;cursor:pointer;background:rgba(0,0,0,0.55);border:none;border-radius:20px;padding:3px 18px;font-size:1rem;letter-spacing:1px;transition:background 0.2s;white-space:nowrap;}
+    .lb-close:hover{background:rgba(255,80,110,0.8);}
+    #lightbox-counter{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.9);font-size:.82rem;background:rgba(0,0,0,0.5);padding:4px 14px;border-radius:20px;pointer-events:none;}
+    #back-top{position:fixed;bottom:25px;right:20px;width:44px;height:44px;background:linear-gradient(135deg,#ff9ab0,#ffb7c5);color:white;font-size:1.3rem;border:none;border-radius:50%;cursor:pointer;box-shadow:0 4px 15px rgba(255,100,130,0.4);display:none;align-items:center;justify-content:center;transition:transform 0.2s;z-index:200;}
+    #back-top:hover{transform:scale(1.1);}
+    footer{text-align:center;padding:30px 20px;background:white;border-top:3px solid var(--pink-mid);font-size:.85rem;color:var(--text-light);}
+    .heart{color:#e05070;font-size:1.1rem;}
+    @media(max-width:600px){
+      .gallery{grid-template-columns:repeat(auto-fill,minmax(95px,1fr));gap:6px;}
+      .day-date{display:none;}.diary-card{padding:15px;}
+      .nav-jump-row{display:none;}
+      .nav-year-label{font-size:.65rem;padding:2px 7px;}
+      .month-tab{padding:6px 8px;font-size:.68rem;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-emoji">🌸</span>
+  <h1>정찬우의 어린이집 추억록</h1>
+  <p>사랑스러운 찬우의 소중한 하루하루</p>
+  <div class="header-stats">
+    <span class="stat-badge">📅 총 75일</span>
+    <span class="stat-badge">📸 총 278장</span>
+    <span class="stat-badge">🏫 2021</span>
+  </div>
+  <span class="header-decoration dec1">🌷</span>
+  <span class="header-decoration dec2">⭐</span>
+  <span class="header-decoration dec3">🌈</span>
+  <span class="header-decoration dec4">🎀</span>
+  <span class="header-decoration dec5">🌻</span>
+  <span class="header-decoration dec6">💕</span>
+</header>
+
+<nav>
+<div class="nav-inner">
+<div class="nav-year-row">
+<span class="nav-year-label">2021</span>
+<a href="#m202103" class="month-tab">3월<br><span class="nav-sub">17일</span></a>
+<a href="#m202104" class="month-tab">4월<br><span class="nav-sub">20일</span></a>
+<a href="#m202105" class="month-tab">5월<br><span class="nav-sub">16일</span></a>
+<a href="#m202106" class="month-tab">6월<br><span class="nav-sub">22일</span></a>
+</div>
+<div class="nav-jump-row">
+<select onchange="jumpTo(this)">
+<option value="">📅 날짜로 이동...</option>
+<option value="#20210309_054217">2021년 3월 9일 (화)</option>
+<option value="#20210310_055358">2021년 3월 10일 (수)</option>
+<option value="#20210311_055629">2021년 3월 11일 (목)</option>
+<option value="#20210312_061521">2021년 3월 12일 (금)</option>
+<option value="#20210315_082132">2021년 3월 15일 (월)</option>
+<option value="#20210316_080641">2021년 3월 16일 (화)</option>
+<option value="#20210317_073952">2021년 3월 17일 (수)</option>
+<option value="#20210318_072856">2021년 3월 18일 (목)</option>
+<option value="#20210319_073443">2021년 3월 19일 (금)</option>
+<option value="#20210322_065446">2021년 3월 22일 (월)</option>
+<option value="#20210323_053947">2021년 3월 23일 (화)</option>
+<option value="#20210324_074641">2021년 3월 24일 (수)</option>
+<option value="#20210325_062611">2021년 3월 25일 (목)</option>
+<option value="#20210326_065525">2021년 3월 26일 (금)</option>
+<option value="#20210329_084959">2021년 3월 29일 (월)</option>
+<option value="#20210330_063010">2021년 3월 30일 (화)</option>
+<option value="#20210331_063030">2021년 3월 31일 (수)</option>
+<option value="#20210401_063036">2021년 4월 1일 (목)</option>
+<option value="#20210402_063156">2021년 4월 2일 (금)</option>
+<option value="#20210405_063121">2021년 4월 5일 (월)</option>
+<option value="#20210406_063105">2021년 4월 6일 (화)</option>
+<option value="#20210407_063012">2021년 4월 7일 (수)</option>
+<option value="#20210408_063103">2021년 4월 8일 (목)</option>
+<option value="#20210409_063147">2021년 4월 9일 (금)</option>
+<option value="#20210412_063149">2021년 4월 12일 (월)</option>
+<option value="#20210413_063110">2021년 4월 13일 (화)</option>
+<option value="#20210414_063226">2021년 4월 14일 (수)</option>
+<option value="#20210415_063151">2021년 4월 15일 (목)</option>
+<option value="#20210416_063156">2021년 4월 16일 (금)</option>
+<option value="#20210421_063010">2021년 4월 21일 (수)</option>
+<option value="#20210422_062520">2021년 4월 22일 (목)</option>
+<option value="#20210423_062525">2021년 4월 23일 (금)</option>
+<option value="#20210426_091014">2021년 4월 26일 (월)</option>
+<option value="#20210427_073946">2021년 4월 27일 (화)</option>
+<option value="#20210428_073739">2021년 4월 28일 (수)</option>
+<option value="#20210429_062917">2021년 4월 29일 (목)</option>
+<option value="#20210430_064752">2021년 4월 30일 (금)</option>
+<option value="#20210504_062331">2021년 5월 4일 (화)</option>
+<option value="#20210506_062136">2021년 5월 6일 (목)</option>
+<option value="#20210507_063222">2021년 5월 7일 (금)</option>
+<option value="#20210510_065810">2021년 5월 10일 (월)</option>
+<option value="#20210511_062503">2021년 5월 11일 (화)</option>
+<option value="#20210512_054801">2021년 5월 12일 (수)</option>
+<option value="#20210513_055830">2021년 5월 13일 (목)</option>
+<option value="#20210514_065001">2021년 5월 14일 (금)</option>
+<option value="#20210517_062423">2021년 5월 17일 (월)</option>
+<option value="#20210518_062055">2021년 5월 18일 (화)</option>
+<option value="#20210524_062044">2021년 5월 24일 (월)</option>
+<option value="#20210525_062155">2021년 5월 25일 (화)</option>
+<option value="#20210526_063021">2021년 5월 26일 (수)</option>
+<option value="#20210527_090937">2021년 5월 27일 (목)</option>
+<option value="#20210528_053136">2021년 5월 28일 (금)</option>
+<option value="#20210531_063154">2021년 5월 31일 (월)</option>
+<option value="#20210601_062344">2021년 6월 1일 (화)</option>
+<option value="#20210602_053102">2021년 6월 2일 (수)</option>
+<option value="#20210603_054020">2021년 6월 3일 (목)</option>
+<option value="#20210604_054009">2021년 6월 4일 (금)</option>
+<option value="#20210607_062707">2021년 6월 7일 (월)</option>
+<option value="#20210608_054008">2021년 6월 8일 (화)</option>
+<option value="#20210609_054010">2021년 6월 9일 (수)</option>
+<option value="#20210610_055139">2021년 6월 10일 (목)</option>
+<option value="#20210611_054005">2021년 6월 11일 (금)</option>
+<option value="#20210614_054018">2021년 6월 14일 (월)</option>
+<option value="#20210615_054016">2021년 6월 15일 (화)</option>
+<option value="#20210616_054010">2021년 6월 16일 (수)</option>
+<option value="#20210617_054019">2021년 6월 17일 (목)</option>
+<option value="#20210618_062304">2021년 6월 18일 (금)</option>
+<option value="#20210621_054008">2021년 6월 21일 (월)</option>
+<option value="#20210622_062131">2021년 6월 22일 (화)</option>
+<option value="#20210623_054004">2021년 6월 23일 (수)</option>
+<option value="#20210624_054009">2021년 6월 24일 (목)</option>
+<option value="#20210625_062539">2021년 6월 25일 (금)</option>
+<option value="#20210628_054007">2021년 6월 28일 (월)</option>
+<option value="#20210629_064324">2021년 6월 29일 (화)</option>
+<option value="#20210630_054014">2021년 6월 30일 (수)</option>
+</select></div>
+</div>
+</nav>
+
+<main>
+
+<div class="month-section" id="m202103">
+<div class="month-header">
+  <div class="month-title">2021년 3월 ✨</div>
+  <span class="month-stats">📅 17일 · 📸 61장</span>
+</div>
+
+<div class="day-section" id="20210309_054217">
+<div class="day-header">
+  <span class="day-badge">Day 1</span>
+  <span class="day-title">🌸 2021년 3월 9일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">사랑반 친구들~♡
+오늘은 더 안정된 모습으로 놀이를 하네요^^
+그런데 밥먹을 시간이 되면
+잠이 와서 눈물을 보이기도하고
+엄마생각이 나서 눈물을 보이기도 하네요ㅎㅎ
+밥을 잘 먹는 친구들도 있지만
+아직은 밥을 거부하는 친구들도 있어요~ㅠㅠ
+너무 걱정하지마시고 조금만 더 기다려주시면 밥도 잘먹을 날이 올거랍니다^^
+
+우리 찬우도 선생님품과 등에서
+차츰 내려와 앉아서 놀이할 날이 오겠죠?😊
+우는 모습도 너무 귀여운 찬우~
+빨리 방긋방긋 웃는 얼굴도 보고싶네요~
+
+콧물을 보이는 친구들이 많아요ㅠㅠ
+위생과 건강에 조금 더 신경써주시고
+손톱도 짧게 정리부탁드립니다~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210310_055358">
+<div class="day-header">
+  <span class="day-badge">Day 2</span>
+  <span class="day-title">🌸 2021년 3월 10일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(1,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(1,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210310_055358/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 알록달록 예쁜 솜공을
+만져보고 계란판에다 하나씩 넣어보았어요~
+고사리같은 작은손으로 꾹꾹 눌러서 넣어보는 모습들이 무척 귀여웠답니다-😊
+
+별스티커로 놀이를 해보기도 했어요~
+반짝반짝 작은별~🎶노래를 부르며
+가족사진위에도 붙여보고
+선생님 얼굴과 친구손에도 붙여보며
+재미있게 놀이해보았답니다~😊
+
+우리 찬우 처음에는 안겨서 안내리려고 하고 놀잇감도 거부했지만 차츰 기분이 괜찮아졌어요~
+선생님 품에서 내려와 무릎으로
+무릎에서 내려와 바닥에 앉아보는데
+성공했어요~~
+놀잇감에도 관심을 보이고 손에 붙여준
+스티커에도 관심을 보이며 놀이했답니다
+밥도 많이는 아니지만 세숟가락 먹었구요~
+보내드리는 사진보시며 이야기 나누어보세요~♡</div>
+</div>
+</div>
+
+<div class="day-section" id="20210311_055629">
+<div class="day-header">
+  <span class="day-badge">Day 3</span>
+  <span class="day-title">🌸 2021년 3월 11일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(2,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210311_055629/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(2,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210311_055629/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(2,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210311_055629/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(2,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210311_055629/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우~♡
+오늘도 선생님무릎에 앉아 놀잇감에
+관심을 보이며 놀이해보았어요~
+뽀로로인형과 포비인형을 책상앞에 놓아주었더니 손으로 만져보기도하고
+바닥에다 밀어 떨어뜨려보기도 하며
+재미있어했어요~ㅎㅎ
+
+동물자동차를 따라 선생님과 걸음마를 하며 걸어가보기도하고
+친구가 굴려주는 공을 잡아보기도했답니다^^
+그러다가 선생님품에 안기려해서 안아주면
+잠이들었어요
+이불에 눕히려고하면 깨어나 다시 안기려했어요~
+당분간은 이불이 아닌 선생님등이나 품에서 잠을 자야할것같아요ㅎㅎ
+
+오늘도 어린이집에서 잘 놀다왔다고
+칭찬많이해주시며 안아주세요~~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210312_061521">
+<div class="day-header">
+  <span class="day-badge">Day 4</span>
+  <span class="day-title">🌸 2021년 3월 12일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">봄비가 촉촉이 내리는 금요일입니다~☔
+오늘은 비도 오고 감기 때문에 결석한 친구들도 있어서인지 평소보다 차분하게
+놀이하는 모습을 보였어요~
+
+우리찬우는 비가 와서인지
+오랫동안 선생님등에서 푹 잤어요~ㅎㅎ
+
+2주간의 적응기간을 마치고
+다음 주부터는 정상 보육이 시작됩니다~
+친구들과 함께 낮잠자는 환경에 또 다른 적응이 시작되겠지요ㅎㅎ
+너무 걱정하지 마시고 천천히 기다려주시면
+우리찬우도 잘적응하리라 믿어요~
+
+즐거운 주말 보내세요~~🤗
+
+👉아동 등 사전등록신청서랑 입학준비금 및 생일 행사비 납부 안내문 가방에 넣어 보내드립니다
+확인해주시고 작성해주셔서
+보내주세요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210315_082132">
+<div class="day-header">
+  <span class="day-badge">Day 5</span>
+  <span class="day-title">🌸 2021년 3월 15일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(4,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(4,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210315_082132/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 교실로 들어오는 친구들에게 손을 흔들며 인사하기를 해보았어요. 
+선생님을 따라서 "안녕~"하고 손을 흔들어보았답니다
+ 다음에는 말도 함께하면서 인사를 할날이 오겠죠~ㅎㅎ
+
+우리 찬우~
+쉬고 등원했는데도 기분이 좋아요~😊
+젖병을 들고 놀이 한참하다가
+잠이 들었어요~
+여전히 불안한지 잠은 등에서만
+자려고하네요ㅎㅎ
+설사를 두번해서 조금 걱정이 되니
+지켜봐주시구요~
+오늘은 누워서 기저귀 가는데 성공했답니다~^^
+
+오늘 상담에 대한 수요조사 및 운영 위원회 구성에 대한 의견서가 나갑니다. 확인하시고 내일까지 꼭 회신부탁드립다.</div>
+</div>
+</div>
+
+<div class="day-section" id="20210316_080641">
+<div class="day-header">
+  <span class="day-badge">Day 6</span>
+  <span class="day-title">🌸 2021년 3월 16일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(5,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210316_080641/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(5,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210316_080641/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(5,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210316_080641/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(5,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210316_080641/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 가족사진 위에 끼적여보기 놀이를 해보았어요. 
+아빠 엄마를 찾으면서 열심히 끼적여보네요~
+완성된 작품을 교실에 전시해주니 신기했나 봐요. 왔다 갔다 놀이를 하면서도 한번씩 쳐다보았답니다~^^
+
+우리찬우는 아직 관심이 없네요~ㅎㅎ
+놀잇감 던지기에 흥미를 보여요
+던지고 잘했다고 손뼉도 치면서~
+귀여운 찬우에요~^^
+어제부터 누워서 기저귀도 갈고
+오늘은 업지않고도 누워서 잤답니다~
+칭찬많이 해주세요~~
+그런데 밥을 안먹으려해서
+배가 많이 고플듯합니다ㅠㅠ</div>
+</div>
+</div>
+
+<div class="day-section" id="20210317_073952">
+<div class="day-header">
+  <span class="day-badge">Day 7</span>
+  <span class="day-title">🌸 2021년 3월 17일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(6,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(6,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(6,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(6,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(6,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(6,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(6,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210317_073952/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 유희실에서 장난감을 가지고 놀이를 해보았어요.  처음으로 가지고 노는 장난감이라서 그런지 굉장히 흥미를 보이더라고요. 자동차를 보더니 “붕~”이라고 하더라고요~^^ 자동차 위에 태워주니 아직은 낯설었는지 잠깐 앉았다 일어섰답니다.  아직은 모든 것들이 호기심이지만 두렵기도 한가봐요~
+
+우리찬우 오늘은 친구들이랑 낮잠시간에
+같이 잤어요~
+놀이시간이 많이 길어졌답니다ㅎㅎ
+점심시간에도 밥조금 먹고
+특히 청국장찌개에 있는 두부를 잘먹었답니다~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210318_072856">
+<div class="day-header">
+  <span class="day-badge">Day 8</span>
+  <span class="day-title">🌸 2021년 3월 18일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 " 어린이집갑니다"노래를 배워보았어요. 쨍쨍하며 손동작을 보여주니 리본 막대를 흔들기도하고 손동작도 따라서 해보네요~
+너무 귀여웠답니다.~^^
+
+우리찬우 오늘은 많이 피곤했나봐요~
+큰소리를 내더니 안아달라고하네요ㅎㅎ
+이제는  누워서도 잘자는 찬우에요^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210319_073443">
+<div class="day-header">
+  <span class="day-badge">Day 9</span>
+  <span class="day-title">🌸 2021년 3월 19일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우 오늘은 컨디션이 별로네요ㅠㅠ
+열은 없었지만 콧물보였구요..
+선생님품에서 떨어지려하지 않았어요ㅠㅠ
+등원하자마자 안떨어지려 눈물보이더니
+피곤했는지 잠이 금새 들었답니다~
+집에서도 지켜봐주시고
+주말동안 푹쉬며 휴식취해서
+건강한 모습으로 다음주에 만날수있기를 바래봅니다~😊
+주말 잘보내세요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210322_065446">
+<div class="day-header">
+  <span class="day-badge">Day 10</span>
+  <span class="day-title">🌸 2021년 3월 22일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(9,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(9,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(9,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(9,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(9,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(9,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(9,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210322_065446/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">즐거운 주말 보내셨나요?
+오늘은 벽에 붙여진 내얼굴과 친구들의 얼굴사진을 탐색해보았어요~
+"찬우는 어디 있나? 여기~"하고
+노래를 불러보며 내얼굴도 찾아보고
+친구들의 이름을 부르며 친구들의 얼굴도 찾아보았답니다^^
+
+우리찬우 푹자고 왔는지 기분이 너무 좋아요~
+놀잇감가지고 한참을 놀았답니다
+놀다가 잠이 오는지 칭얼대기는 했지만
+잠깐 업어주니 괜찮아졌어요~ㅎㅎ
+
+이제는 대부분 친구들이 낯설던 어린이집에 잘 적응하는 모습입니다
+오늘도 잘하고 왔다고 꼭 안아주며
+칭찬해주세요~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210323_053947">
+<div class="day-header">
+  <span class="day-badge">Day 11</span>
+  <span class="day-title">🌸 2021년 3월 23일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(10,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210323_053947/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(10,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210323_053947/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 우리 사랑반 처음으로 산책을 해보았어요~
+선생님손 친구손을 잡고 산책을 하며
+봄날씨도 느껴보고 지나가시는 할머니들께 인사를 했더니 쓰담쓰담해주시며  귀여움도 듬뿍 받았답니다~😊
+자동차옆에 웅크리고 앉아있는 고양이에게도 "안녕~"하고 손을 흔들어주기도 했어요~
+한바퀴돌고나니 우리찬우는 어느새
+잠이 들었네요ㅎㅎ</div>
+</div>
+</div>
+
+<div class="day-section" id="20210324_074641">
+<div class="day-header">
+  <span class="day-badge">Day 12</span>
+  <span class="day-title">🌸 2021년 3월 24일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(11,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(11,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210324_074641/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 내 얼굴사진위에다 스티커를 붙여 꾸며보았어요~
+커다란 자신의 얼굴사진이 마음에 들었는지
+안고 다니며 좋아했답니다ㅎㅎ
+별스티커를 붙여보며 작은별 노래도 불러보고 노래를 부르며 율동도 해보았어요~
+
+우리찬우 오늘은 기분이 좋아요~
+방긋방긋 웃으면서 오랫동안 놀이했답니다
+잠자는 시간만 맞으면 좋을텐데~ㅎㅎ</div>
+</div>
+</div>
+
+<div class="day-section" id="20210325_062611">
+<div class="day-header">
+  <span class="day-badge">Day 13</span>
+  <span class="day-title">🌸 2021년 3월 25일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(12,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210325_062611/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(12,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210325_062611/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(12,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210325_062611/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(12,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210325_062611/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🌸따뜻해진 봄날씨~
+오늘도 산책을 다녀왔어요^^
+갈때마다 만나는 고양이에게 인사도 해보고
+봄에 피는 꽃들도 만나보았어요~
+노란 개나리랑 민들레~
+보라빛 제비꽃이랑 매실꽃도 보구요~
+예쁘게 핀 꽃들을 보니 기분도 좋아졌어요~ㅎㅎ
+
+🚨내일은 소방대피훈련을 합니다
+처음하는 소방대피훈련이라
+내일은 현관까지만 대피해보려합니다
+다음부터는 소방대피훈련이 있는 날은
+갈아신을 양말보내주세요~
+대피할때 실제상황처럼 신발을 신지않고 
+대피훈련이 이루어집니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210326_065525">
+<div class="day-header">
+  <span class="day-badge">Day 14</span>
+  <span class="day-title">🌸 2021년 3월 26일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 소방안전교육 및 소방대피훈련을 해보았어요~
+처음이라 놀랄까봐 작은 소리의 비상벨소리를 들어보고
+"불이야~"하고 크게 외쳐보며 입과 코를 막고 현관까지 대피해보았어요^^
+사랑반 친구들 형님반따라서
+종종종 달려나가며 재미있어하네요ㅎㅎ
+우리찬우는 선생님등에 업혀서 함께 대피해보았어요ㅎㅎ
+오늘도 잠자고 일어나서 집에 가기전에 응가했답니다~
+
+이렇게 또 한주가 지나갑니다
+예쁘게 핀 벚꽃구경하시며 즐거운 주말보내세요~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210329_084959">
+<div class="day-header">
+  <span class="day-badge">Day 15</span>
+  <span class="day-title">🌸 2021년 3월 29일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(14,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210329_084959/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(14,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210329_084959/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 친구들과 손을 흔들며 인사를 나눠 보았어요. 아직은 반갑게 인사를 하지는 못하였지만 친구가 등원했다고 표현하며 관심을 보였네요. 
+사진 이름 카드를 보면서 친구의 이름도 알아보고 내 이름 카드가 나오면 손을 높이 들어 인사도 나눠보았답니다. ~^^*
+
+우리 찬우 주말을 잘지내고 왔는지
+기분이 좋아요~
+놀다가 안아달라고 하기를 반복했지만
+놀이로 유도하였더니 잠도 쫓고
+점심까지 먹고는 잠들었답니다~
+앞으로도 계속 이렇게 놀이하다가
+자고 갔으면 좋을텐데~😊
+황사가 심하다고 합니다. 건강 유의하세요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210330_063010">
+<div class="day-header">
+  <span class="day-badge">Day 16</span>
+  <span class="day-title">🌸 2021년 3월 30일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">맑고 높은 하늘은 언제 볼 수 있을는지.. 오늘도 봄의 불청객 황사가 찾아왔네요. 그래서 안전교육으로 황사에 대해 배워보았어요. “먼지바람 싫어” 했더니 손으로 바람 흉내를 내면서 황사가 왔대요ㅎㅎ
+창문은 꼭 닫기
+물많이 마시기
+손깨끗이 씻기
+양치질 잘하기
+실외놀이 자제하기~
+약속해보았답니다. 
+가정에서도 함께 지켜주시면
+봄철 불청객 황사대응에
+많은 도움이 될듯합니다^^
+
+내일 예정된 김천시 어린이 급식관리 지원센터 영양교육이 5월 31일로 연기하게 되었습니다. 참고해주세요~^^*</div>
+</div>
+</div>
+
+<div class="day-section" id="20210331_063030">
+<div class="day-header">
+  <span class="day-badge">Day 17</span>
+  <span class="day-title">🌸 2021년 3월 31일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(16,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210331_063030/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(16,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210331_063030/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(16,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210331_063030/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(16,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210331_063030/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 성폭력 아동학대 예방교육을 해보았어요.  “소중한 곳을 만지면 안 돼요!”라고 이야기를 하며 팔을 엑스로 만들어 보였더니 작고 귀여운 팔을 꼬으며 안된다고 하더라고요ㅎ 이제는 교사의 행동을 조금씩 따라 한답니다~^^
+
+내일은 감자심기 활동이 있습니다. 감자를 보면 무섭다고 하지 않을까 또 흙 만지기 싫다고 울지 않을까~라는 걱정이 있지만 잘할 수 있을 거라는 믿음이 더 크네요. 낯선 활동에 두려워하지 않게 집에서도 이야기나누어보세요~^^
+
+우리찬우는 아침부터 안아달라고 하고
+안아주면 일어서라고 매달리며 눈물보였지만 놀잇감으로 유도하며
+잠을 쫓아냈답니다ㅎㅎ
+다행히 점심시간에 친구들이랑 밥도 잘먹고 잠도 같이 잤어요~
+칭찬많이해주세요~^^</div>
+</div>
+</div>
+</div>
+
+<div class="month-section" id="m202104">
+<div class="month-header">
+  <div class="month-title">2021년 4월 ✨</div>
+  <span class="month-stats">📅 20일 · 📸 55장</span>
+</div>
+
+<div class="day-section" id="20210401_063036">
+<div class="day-header">
+  <span class="day-badge">Day 18</span>
+  <span class="day-title">🌸 2021년 4월 1일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 고사리 같은 손으로  감자심기 활동을 해보았어요~
+우리찬우는 등에 업혀 친구들 심는거 보았답니다ㅎㅎ
+기분좋게 교실로 들어와서 놀잇감 가지고 놀다가 눈만 마주치면 안아달라고 하네요~ㅎㅎ
+놀잇감유도하며 산책시간까지 잘 버티다가
+업고 나갔더니 또 잠이 들었어요~
+잠자고 일어나서 묽은변 응가했구요
+할머니랑 기분좋게 귀가했답니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210402_063156">
+<div class="day-header">
+  <span class="day-badge">Day 19</span>
+  <span class="day-title">🌸 2021년 4월 2일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 “불이야” 외치며 놀이터까지 함께 대피해보았어요. 신발을 신지 않고 대피하는 게 어색해했지만 대피 무사히 성공~^^ 너무 대견했답니다. 
+우리찬우도 선생님등에 업혀서
+함께 대피해보았어요~ㅎㅎ
+주말에 비가 온대서 어린이집옆 벚꽃나무에서 산책후 사진을 찍어보았는데
+아쉽게도 찬우는 쿨쿨~~ㅎㅎ
+주말 잘보내세요~~~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210405_063121">
+<div class="day-header">
+  <span class="day-badge">Day 20</span>
+  <span class="day-title">🌸 2021년 4월 5일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(19,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(19,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(19,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(19,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(19,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(19,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(19,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210405_063121/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">즐거운 주말 보내셨나요~😊
+
+오늘은 식목일을 맞아 씨앗심기를 해보았어요~
+화분위에다 매직으로 자유롭게 꾸미기를 해보고 캡슐속에 들어 있는 씨앗을 쏘옥 넣어보고 "잘자라라 씨앗아~"하고
+손을 흔들며 인사를 해보았어요~
+"씨씨씨를 뿌리고 꼭꼭 물을 주었죠~"하며 씨앗노래도 함께 불러보았답니다^^
+우리 찬우는 스티커를 붙여 화분을
+꾸며 보았어요
+그리고는 안아달라고~~ㅎㅎ
+그래도 기저귀갈때도 손잡고 기더귀갈이 매트까지 걸어보고 기분은 좋았답니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210406_063105">
+<div class="day-header">
+  <span class="day-badge">Day 21</span>
+  <span class="day-title">🌸 2021년 4월 6일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(20,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210406_063105/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(20,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210406_063105/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(20,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210406_063105/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(20,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210406_063105/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(20,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210406_063105/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(20,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210406_063105/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 요리활동으로 소떡소떡을
+만들어보았어요~
+꼬지에다 소세지랑 떡을 하나씩 끼워보았는데 우리 사랑반은 바로
+입으로 가져가네요ㅎㅎ
+완성된 소떡소떡은 오후 간식으로
+맛있게 먹을거랍니다^^
+
+우리찬우도 활동에 잘 참여했어요~
+오늘은 업고 산책해도 잠자지 않았어요~
+점심먹고 친구들이랑 함께 잤답니다ㅎㅎ
+그런데 그냥은 안자서 업었더니
+자네요~
+
+내일은 쥬쥬스토리 동물체험이 있습니다~
+어떤 동물들이 올지 기대됩니다~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210407_063012">
+<div class="day-header">
+  <span class="day-badge">Day 22</span>
+  <span class="day-title">🌸 2021년 4월 7일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(21,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210407_063012/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(21,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210407_063012/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(21,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210407_063012/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 동물과 함께 찾아가는 체험학습
+쥬쥬스토리가 있는 날~😊
+우리 사랑반 친구들도 잠깐 참여 해보았는데
+🐰귀여운 토끼와 닮은 홀랜드 롭이어를
+보고 좋아했어요
+우리 친구들에게는 토끼라고 소개해주고
+"산토끼"노래도 불러주었답니다^^
+우리찬우는  별로 관심이 없는듯 합니다ㅎㅎ
+사진 보시며 이야기 나누어보세요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210408_063103">
+<div class="day-header">
+  <span class="day-badge">Day 23</span>
+  <span class="day-title">🌸 2021년 4월 8일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">조물조물 점토놀이해보았어요~
+부드럽고 말랑말랑한  천사점토를
+만져보며 촉감도 느껴보고
+손가락으로 꾹꾹 눌러도 보고
+조금씩 떼어도 보고
+동글동글 빚어주었더니 떼구르르 굴려보며
+재미있어했답니다^^
+
+오늘도 봄바람을 느껴보며 산책을
+해보았어요~
+이제는 짝꿍손도 잘잡고
+안정적으로 걸어가는 모습이랍니다~😊
+우리 찬우는 오늘도 업고 산책했는데
+다행히 잠을 안자서 친구들과 함께 자고갑니다~
+응가를 많이해서 옷에 묻어
+갈아입고 갑니다
+여벌옷 보내주세요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210409_063147">
+<div class="day-header">
+  <span class="day-badge">Day 24</span>
+  <span class="day-title">🌸 2021년 4월 9일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(23,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(23,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210409_063147/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 놀잇감사진을 보며 놀잇감의 이름을 알아보고 같은 놀잇감을 찾아보기도하고
+색연필로 자유롭게 끼적여보기도 했어요~
+이제는 놀잇감사진을 보며 제 자리에 정리도 배워가고 있어요
+"모두 제자리"노래를 불러주면 놀다가  정리하는 모습이 무척 사랑스럽답니다~😊
+
+어제와 연계하여 점토놀이도 해보았어요~
+오늘은 소꿉놀잇감 칼로 썰어도 보고
+그릇에 담아도 보면서 흥미로워했답니다^^
+
+햇살이 점점 뜨거워지네요~
+산책나갈때 쓰고 나갈 창모자 보내주시구요
+벌써 한주를 마무리하네요~
+즐거운 주말 보내세요^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210412_063149">
+<div class="day-header">
+  <span class="day-badge">Day 25</span>
+  <span class="day-title">🌸 2021년 4월 12일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">주말 잘 보내셨나요~^^
+우리찬우 피곤했는지 등원하자마자 안아달라고 팔을 벌리네요ㅎㅎ
+잠이 오는지 눈도 비비고~
+떨어지려하지않아 업어주었더니 금새 잠들었답니다~ㅎㅎ
+친구들 밥먹고나니 일어나서는 기분이 좋아 소리를 지르네요^^
+
+이번 주 가정과 연계활동은 부모님을 만나면 ‘인사해요’입니다. 집에서도 인사 지도 부탁드릴께요~
+
+외부활동참여동의서 안내문 나갑니다
+싸인하셔서 보내주세요^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210413_063110">
+<div class="day-header">
+  <span class="day-badge">Day 26</span>
+  <span class="day-title">🌸 2021년 4월 13일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 그림카드를 보면서 놀잇감 이름도 알아보고
+놀잇감 사진길을 만들어 걸어보기도하고
+점프점프하면서 토끼처럼 뛰어보기도 하고 악어흉내를 내면서 기어보기도 하며
+다양한방법으로 놀이해보았어요~
+자동차를 가져와 굴려보기도 하고
+동물인형을 가져와 놀이해보기도 했어요^^
+처음 해보는 활동이라 그런지 호기심과 적극성이 최고였답니다~^^
+
+우리찬우는 오늘도 눈을 비비며 안아달라고 하네요~ㅎㅎ
+업어주었더니 산책을 나가기도 전에  잠들었어요~
+자고 일어나서 밥도 많이 먹고
+친구들 자는거 보고 기분좋게 손을 흔들며 할머니랑 귀가했답니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210414_063226">
+<div class="day-header">
+  <span class="day-badge">Day 27</span>
+  <span class="day-title">🌸 2021년 4월 14일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(26,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210414_063226/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(26,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210414_063226/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(26,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210414_063226/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 풍선을 이용한 놀이를 해보았어요. 풍선이라는 자체도 너무 흥미롭고 재미있는데 도구를 사용해서 치니 까르르~ 너무너무 재미있어했답니다.  손으로 치기 점프해서 쳐보기 등 다양한 방법이 있네요. 집에서도 한번 놀이 활동으로 해보아도 좋을 것 같아요~^^*
+
+우리 찬우~
+요즘은 양말 벗어서 던지고
+다시 신겨달라고해서 벗고 던지고^^
+재미있나봐요ㅎㅎ</div>
+</div>
+</div>
+
+<div class="day-section" id="20210415_063151">
+<div class="day-header">
+  <span class="day-badge">Day 28</span>
+  <span class="day-title">🌸 2021년 4월 15일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(27,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210415_063151/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(27,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210415_063151/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(27,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210415_063151/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(27,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210415_063151/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(27,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210415_063151/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(27,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210415_063151/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 감각 탐색 활동으로 도장 찍기 놀이 활동을 해보았어요. 쿵쿵쿵 누르기만 하면 그림이 나오는 마법의 도장 놀이~^^ 너무 즐거워했답니다. 완성된 그림을 보면서 친구들과 감상도 해보는 시간도 가져보았답니다. 
+
+내일은 비가 온다는 슬픈 소식이 있어서 월요일로 소풍놀이를 연기하게 되었어요ㅠㅠ
+착오 없으시길 바랍니다~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210416_063156">
+<div class="day-header">
+  <span class="day-badge">Day 29</span>
+  <span class="day-title">🌸 2021년 4월 16일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우~
+오늘은 컨디션이 좋아요^^
+눈을 비비며 안아달라했지만 선생님
+무릎에 앉아서 한참을 친구들이랑 놀이하구요~
+산책시간에도 잠들지않고
+이곳저곳을 살피면서 즐거워했어요^^
+점심은 많이 먹지는 않았지만
+선생님무릎에 앉아 먹었구요~
+잠은 누워서 자려고 하지 않아
+업어주었더니 금방 잠이 들었답니다^^
+
+날씨가 갑자기 쌀쌀해졌어요.ㅠㅠ 
+감기 조심하시고 건강하고 안전한 주말 보내세요~
+
+월요일에는 사랑반 봄소풍 놀이가 있습니다. 간식이랑 물, 음료 등.. 모든 물건에는 이름 적어주시길 부탁드립니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210421_063010">
+<div class="day-header">
+  <span class="day-badge">Day 30</span>
+  <span class="day-title">🌸 2021년 4월 21일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(29,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210421_063010/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(29,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210421_063010/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🌷오랜만에 등원한 우리 찬우~
+아직 감기증세가 있어서 인지
+잠깐 기분좋게 놀다가 안아달라고
+하네요~
+유모차타고 산책을 나갔는데
+잠이 들었어요
+친구들 밥먹고나니 깼답니다ㅎㅎ
+
+포프리가 든 투명통을 제시해주었더니
+뭔가?하고 탐색하더니 조심스럽게 들고
+흔들어보네요ㅎㅎ
+선생님이 코를 대고 냄새를 맡아보며
+"음~꽃 향기가 나네~"하고 말하자
+따라서 향기를 맡아보네요
+그래도 흔들며 소리를 탐색하는게
+더 재미있나봅니다~^^
+찬우는 던지는게 더 재미있구요ㅎㅎ
+
+내일은 지문등록합니다
+10시까지 등원부탁드려요^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210422_062520">
+<div class="day-header">
+  <span class="day-badge">Day 31</span>
+  <span class="day-title">🌸 2021년 4월 22일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리 찬우 오늘도 등원해서 잠깐 놀다가
+안아달라고 하네요~
+감기가 완전히 낫지를 않아서
+콧물보였고
+잠자면서 코도 막혀했답니다
+낮잠자고 일어나서는 기분이 좋아져
+소리도 치고
+걸음마도 하면서 스스로 잘했다고 손뼉치며 기분좋아했답니다~^^
+
+내일은 육아지원센터 놀이체험갑니다
+9시30분까지 등원부탁드려요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210423_062525">
+<div class="day-header">
+  <span class="day-badge">Day 32</span>
+  <span class="day-title">🌸 2021년 4월 23일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(31,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,10)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_10.jpg" alt="사진 11" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,11)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_11.jpg" alt="사진 12" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,12)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_12.jpg" alt="사진 13" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(31,13)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210423_062525/image_13.jpg" alt="사진 14" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 처음으로 어린이집 버스를 타고
+육아지원센터에 놀이체험을 다녀왔답니다~
+
+우리찬우는 낯설어 할줄 알았는데
+빠르게 기어서 이곳저곳을
+탐색하며 좋아했어요~
+신나게 노는가 싶더니 안아달라며
+눈을 비비네요ㅠㅠ
+좀더 놀면 좋을텐데 아쉬웠어요..
+다음에는 열심히 걸어다니면서
+놀이할수 있기를 기대해봅니다^^
+
+일교차가 커서 감기에 걸린 친구들이 많아요ㅠㅠ
+주말 동안 푹 쉬어서 건강한 모습으로
+만날 수 있기를 바라봅니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210426_091014">
+<div class="day-header">
+  <span class="day-badge">Day 33</span>
+  <span class="day-title">🌸 2021년 4월 26일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우~
+아침일찍 일어나서인지 평소보다
+일찍 낮잠을 잤답니다
+아직 콧물때문에 코가 답답한지
+자주 손으로 코를 비비네요..
+기저귀가 많이 남아서
+가방에 넣어 보내드려요~
+저녁식사 맛있게 하세요^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210427_073946">
+<div class="day-header">
+  <span class="day-badge">Day 34</span>
+  <span class="day-title">🌸 2021년 4월 27일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 신문지 찢기 놀이를 해보았어요. 아직은 종이 결대로 찢기는 어려웠는지 뜯기는 했지만  찢는 방법을 알려주고 저희가 살짝 찢을 수 있도록 도와주자 쫘악~ 시원하게 찢는 사랑반이랍니다
+찢어진 신문으로 눈이야~ 외치며 뿌려도 보고 신문지를 뭉쳐서 공도 만들어 떼구르르 굴려보기도 하고 던져보며 놀이 보았답니다.  
+우리찬우는 아직 뜯기도 어려워하여
+친구들이 뜯고 찢은 신문지를 만져보며
+던지고 놀이했어요~
+
+우리 찬우 일과가 친구들이랑 맞지않아
+밥을 못먹고 가서 많이 안타까워요
+너무 서두르지말고 찬우만의 시간을
+기다려주어야할것같아요
+그래도 이제 걸음마도 하고
+늦기는 했지만 많이 대견스런워요~~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210428_073739">
+<div class="day-header">
+  <span class="day-badge">Day 35</span>
+  <span class="day-title">🌸 2021년 4월 28일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우 오늘도 일찍 잠들었어요
+그래도 친구들 밥 먹고 정리하기전에
+일어나 국물에 적셔 잘 먹었구요
+감자구이도 잘먹었어요
+자고난 뒤 기분좋게 놀다가 시원하게 응가도 잘했는데 기저귀가는걸 너무 싫어 몸부림을 쳐서 선생님 둘이서 힘을 합해
+기저귀가는데 성공했답니다
+엉덩이 씻을때도 몸무림쳤어요
+집에서는 기분좋게 기저귀를 가는지 궁금합니다~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210429_062917">
+<div class="day-header">
+  <span class="day-badge">Day 36</span>
+  <span class="day-title">🌸 2021년 4월 29일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(35,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210429_062917/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(35,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210429_062917/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(35,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210429_062917/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(35,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210429_062917/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(35,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210429_062917/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(35,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210429_062917/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">요즘은 아침에 엄마나 할머니랑 헤어지기 싫어하네요..
+우리찬 우 오늘도 일찍 일어났나 봐요~
+들어와서 죽 한 그릇 먹고는 자석처럼 꼭 붙어서는 안 떨어지려 하고
+놀잇감도 싫다며 눈을 비비네요..
+업어주었더니 금방 잠이 들었어요
+한 시간 정도 자고 일어나서
+친구들이랑 함께 밥을 먹었고요
+잠을 자고 나서 인지 기분 좋게 놀잇감 가지고
+놀이했어요~
+응가를 하지 않아 오늘은 서서 쉬 기저귀
+기분 좋게 갈았고요~
+친구들. 기저귀 가는데 다시 안 떨어지려고 눈물 보였답니다</div>
+</div>
+</div>
+
+<div class="day-section" id="20210430_064752">
+<div class="day-header">
+  <span class="day-badge">Day 37</span>
+  <span class="day-title">🌸 2021년 4월 30일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우~
+오늘도 일찍 잠자고 일어났어요
+오전간식으로 나온 참외는 잘먹었는데
+점심은 두숟가락만 먹고 안먹으려했답니다
+즐거운주말 보내시고
+건강한 모습으로 다음주에 뵐께요^^</div>
+</div>
+</div>
+</div>
+
+<div class="month-section" id="m202105">
+<div class="month-header">
+  <div class="month-title">2021년 5월 ✨</div>
+  <span class="month-stats">📅 16일 · 📸 62장</span>
+</div>
+
+<div class="day-section" id="20210504_062331">
+<div class="day-header">
+  <span class="day-badge">Day 38</span>
+  <span class="day-title">🌸 2021년 5월 4일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(37,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,10)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_10.jpg" alt="사진 11" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,11)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_11.jpg" alt="사진 12" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,12)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_12.jpg" alt="사진 13" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(37,13)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210504_062331/image_13.jpg" alt="사진 14" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 노랑의 날~~🟡
+어린이날을 맞아
+포토죤에서 사진도 찍어보고
+에어바운스에서도 신나게 뛰어보고
+비누방울잡기놀이도 해보며 즐거운시간을 가져보았어요~
+평소와는 다르게 오늘은 뷔페음식을 먹어보았어요~
+선생님의 도움을 받아 음식도 식판에
+담아보고 맛있게 냠냠 먹어보았답니다~😊
+
+우리찬우는 에어바운스를 겁내했어요
+그리고는 잘려고하다가 시끄러우니까
+다시 눈뜨다가~
+비누방울잡기놀이는 재미있어했답니다
+근데 기침을 하네요
+집에서도 살펴봐주세요~^^
+
+내일은 어린이날인데 비소식이 있어 아쉽네요ㅠㅠ
+그래도 즐겁고 행복한 시간 보내세요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210506_062136">
+<div class="day-header">
+  <span class="day-badge">Day 39</span>
+  <span class="day-title">🌸 2021년 5월 6일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🍭즐거운 어린이날 보내셨나요?
+
+오늘은 감기로 인해 결석한 친구들이 많아
+평소보다 차분하게 놀이가 이루어졌어요~
+친구들이 별로 없는데도
+찬우는 안아달라고 발에 힘을주며 차네요ㅎㅎ
+몸이 안좋은지 연신 하품을 하더니
+일찍 잠들었어요~
+산책나갈때 잠이 깨서
+이곳저곳 보면서 기분이 좋아졌답니다ㅎㅎ
+
+산책을 하면서 아카시아 향기도 맡아보구요~
+놀이터에서 시소타는 친구들도 보구요~
+점심식사도 많은 양은 아니지만
+먹었구요
+응가도 했어요~
+오늘도 응가했네~라는 말에 기저귀갈기싫어 눈물보였어요ㅠㅠ
+화장실로 가서 서서 응가 닦구요
+엉덩이도 씻고나니
+기분이 좋아졌답니다~
+
+감기에 걸린 친구들이 많아 어린이집에서는
+위생과 온도조절에 신경쓰고 있답니다
+집에서도 건강상태 잘 살펴주시고
+어머니도 감기조심하세요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210507_063222">
+<div class="day-header">
+  <span class="day-badge">Day 40</span>
+  <span class="day-title">🌸 2021년 5월 7일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(39,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210507_063222/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 어버이날 카드꾸미기를 해보았어요~
+하트안에다 물감묻힌 면봉을 콕콕콕
+찍어보며 하트를 채워보았답니다
+우리 찬우의 감사함을 하트안에다
+듬뿍 담았답니다^^
+
+우리 예쁜 찬우 낳아주셔서
+감사하구요
+앞으로도 찬우에게 많은 사랑 부탁드릴께요
+어버이날을 맞아
+뜻깊은 시간 보내시길 바랄께요
+즐거운 시간 보내세요~~♡</div>
+</div>
+</div>
+
+<div class="day-section" id="20210510_065810">
+<div class="day-header">
+  <span class="day-badge">Day 41</span>
+  <span class="day-title">🌸 2021년 5월 10일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">즐거운 주말 보내셨나요~😊
+우리찬우 눈물보이며 할머니랑 헤어졌지만
+교실로 들어와서는 저랑 눈마주침짓고는
+미소를 보이네요~
+오전간식 오렌지 많이 먹고는 응가한번 하구요~
+잠자고 일어나서 점심식사시간에는
+조금밖에 안먹었는데도 응가는 많이 했어요~ㅎㅎ
+응가가 넘쳐 바지랑 위속옷에 응가가 묻어
+여벌바지로 갈아입고 갑니다~
+여벌바지 보내주시구요^^
+응가만 하면 눈물보이는 찬우에요
+기저귀가는것도 싫고 엉덩이 씻는것도 두려웠나봐요 ㅎㅎ
+그래도 깨끗이 씻고는
+"다됐다~"한마디에 뚝 그치는 찬우랍니다
+그리고는 다시 기분이 좋아졌답니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210511_062503">
+<div class="day-header">
+  <span class="day-badge">Day 42</span>
+  <span class="day-title">🌸 2021년 5월 11일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(41,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(41,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(41,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(41,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(41,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(41,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(41,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210511_062503/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우 핑크핑크색  바지를 입고 왔네요~
+오늘은 손을 흔들며 기분좋게 들어왔어요^^
+아침을 많이 먹고 왔는지 오전간식은
+조금 먹었구요 점심도 반정도만 먹었어요~
+오전에 집에서 응가를 하고 왔는데도
+어린이집에서 한번 더 했어요
+여전히 엉덩이 씻는걸 싫어하는 찬우에요~ㅠㅠ
+업어달라고 몇번을 등에 메달렸지만
+까꿍놀이하면서 놀이로 유도해보며
+잠을 쫓아보았어요 ㅎㅎ
+오늘처럼만 잘 버텨주어도
+하루일과에 잘 적응할수있을것같아요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210512_054801">
+<div class="day-header">
+  <span class="day-badge">Day 43</span>
+  <span class="day-title">🌸 2021년 5월 12일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘도 기분 좋게 등원한 찬우에요^^
+친구들은 줄에 매달린 놀잇감을 잡아보며
+재미있어하는데 찬우는 흔들흔들 흔들리는 놀잇감이 겁이 나는지 거부를 하네요
+그래서 스카프로 까꿍놀이를 해주었더니
+방긋방긋 웃으며 좋아했답니다~
+유모차가 없어서 선생님 등에 업혀
+산책을 다녀왔어요
+신나게 소리 지르며 이곳저곳 살피더니
+산책이 끝날 즈음 잠이 들어
+집에 갈 때까지 푹 잤답니다~
+어머니~
+안 쓰는 유모차 있으면 보내주세요
+접이식이 보관하기 편할 것 같아요^^
+남은 하루도 파이팅하세요~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210513_055830">
+<div class="day-header">
+  <span class="day-badge">Day 44</span>
+  <span class="day-title">🌸 2021년 5월 13일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우 어제오늘 응가를 안하네요
+입맛도 없는지 오전간식으로 나온 죽을 잘 먹지않고 입에 물고 있다가 뱉었답니다~
+
+간식을 먹고는  업어달라고
+제 등뒤로 가서 매달리네요
+놀잇감으로 유도해보았지만
+오늘은 계속 업어 달라고해서
+업어주었더니 금새 잠이 들었어요
+
+일어나서 미역국에 밥적셔 주었더니
+두숟가락먹고는 다시 입에 물고 있네요
+그러다가 친구들이 이불에 눕자
+신이나서 여기저기 걸어다니며
+기분이 좋아졌답니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210514_065001">
+<div class="day-header">
+  <span class="day-badge">Day 45</span>
+  <span class="day-title">🌸 2021년 5월 14일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(44,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,10)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_10.jpg" alt="사진 11" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(44,11)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210514_065001/image_11.jpg" alt="사진 12" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우 어제보다 콧물이 더 심한듯하네요~ㅠㅠ
+그래도 컨디션은 좋아요
+친구들과 함께 활동에 참여도 하구요~
+가족사진속 엄마.아빠 얼굴을 가리키며
+반가워하다가도 눈물을 보였답니다^^
+
+오늘은 비닐 위에 끼적여보기를 해보았어요. 활동 전에 여러 비닐 소리를 들어보고 만져보아서인지 적극적으로 활동에 참여를 하네요~.^^ 
+너무 적극적으로 끼적이기를 해서  유성매직을 바닥에 그리기도 하고
+아직 마르지 않은 매직그림을 문질러
+손과 옷에 묻기도 했어요
+세탁시 살펴봐주시구요~
+그래도 새로운 활동  즐겁게 참여해보았답니다~^^
+
+귀여운 우리 찬우 오전간식으로 나온
+사과를 좋아했어요
+포크찍어주면 스스로 입속으로 쏘옥
+넣어 맛있게 많이 먹었답니다
+그런데 점심은 많이 먹지 않았어요..
+그리고는 처음으로 양치질도 해보았어요
+거부하지않고 입도 잘 벌리고 잘해주었답니다^^
+아직은 업어야지 잠자는 찬우~
+그래도 업어주면 바로 잠이 드네요~😊
+
+벌써 또 한주가 지나갑니다
+코로나 확진자가 다수 발생하여
+많이 걱정되지만 주말동안
+찬우랑 즐거운시간 보내세요~♡</div>
+</div>
+</div>
+
+<div class="day-section" id="20210517_062423">
+<div class="day-header">
+  <span class="day-badge">Day 46</span>
+  <span class="day-title">🌸 2021년 5월 17일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">즐거운 주말 보내셨나요~😊
+어제 오늘 내리는 비로 미세먼지와
+꽃가루를 깨끗하게 씻겨나가길 바래봅니다~
+
+오늘은  웃는 얼굴, 찡그린 얼굴, 화난 얼굴, 우는 얼굴 표정등 다양한 얼굴표정 그림을 보며 이야기해보고 따라서 지어보았어요~
+그리고는 거울앞에 서서 하하하 웃는 얼굴을 지어보며 재미있어했답니다~😁
+
+우리찬우는 오늘도 가족사진을 보며
+아빠를 외쳤어요~ㅎㅎ
+오전간식으로  바나나 한개를 다 먹은뒤
+응가도 잘했구요~
+오늘은 울지않고 엉덩이 씻는데
+성공했답니다~~😊
+
+낮잠자고 일어나서는
+요리활동으로 생크림과일와플을
+만들어보았어요~
+와플에다 생크림을 바른뒤
+과일을 올려 맛있게 먹어보았답니다^^
+우리찬우 점심은 적게 먹었지만
+오후간식은 잘 먹었어요~~^^
+
+코로나19로 인해 힘들지만 
+이번주도 웃는얼굴로 시작해보아요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210518_062055">
+<div class="day-header">
+  <span class="day-badge">Day 47</span>
+  <span class="day-title">🌸 2021년 5월 18일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(46,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210518_062055/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(46,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210518_062055/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 여러 가지 무늬(알록달록 동물무늬와 꽃이랑 하트, 줄무늬 등) 위에다 끼적이기 활동을 해보았어요~
+토끼를 그려주니 멍멍이도 그려달라고 하는 친구가 있어 강아지랑 고양이 얼굴도 그려주었더니 좋아하네요^^
+죽죽 세로줄을 신나게 그어 보며
+비도 표현해보았답니다~
+
+안전 꾸러미에서 제공하는 안전자료로
+지진대피훈련도 해보고요~
+신호등을 건너보는 활동도 해보았어요~
+사진 보시며 이야기 나누어보세요^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210524_062044">
+<div class="day-header">
+  <span class="day-badge">Day 48</span>
+  <span class="day-title">🌸 2021년 5월 24일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(47,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210524_062044/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(47,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210524_062044/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(47,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210524_062044/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(47,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210524_062044/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🌿즐거운 주말 보내셨나요? 
+주말동안 김천에 확진자가 많이 늘지 않을까 걱정이 많으셨지요ㅠㅠ
+생각보다는 많지 않아서 다행이다 싶지만
+아직까지 안심하면 안될것같아요
+저희도 매일 교실 소독에 장난감 세척 등 더욱 안전한 사랑반이 될 수 있도록 노력하겠습니다~^^
+
+오늘은 돋보기를 이용해서 관찰하기 놀이를 해보았어요. 돋보기로 보는 세상이 신기했는지 다양한 물건들을 관찰해보네요~ 
+커졌다 작아지는 놀잇감을 한참동안 집중하며 관찰해보는 친구들~
+우리 찬우는 금방 입으로 탐색을 하네요ㅎㅎ
+
+오랜만에 왔지만 기분좋게 선생님품에 안겼어요~
+한참동안을 잘 놀이하다가 점심시간이 되어서는 등뒤에 메달리며 업어 달라고 하네요ㅠㅠ
+밥은 세숟가락정도 먹고는 더 이상 먹지않았어요
+그리고는 잠이 들었고 친구들이 자려니까
+깨어서 할머니 오실때까지 기분좋게
+놀다가 갔답니다~^^
+
+오전에 응가했어요
+기분좋게 기저귀갈이 매트에 스스로
+누워서 응가도 잘닦고 엉덩이도
+잘 씻었답니다~🥰</div>
+</div>
+</div>
+
+<div class="day-section" id="20210525_062155">
+<div class="day-header">
+  <span class="day-badge">Day 49</span>
+  <span class="day-title">🌸 2021년 5월 25일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(48,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(48,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210525_062155/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 색깔 컵을 이용해서 놀이를 해보았어요~
+선생님과 함께 쌓아보기도 하고
+친구들과 함께 쌓기활동을 해보기도 하며
+흥미있어 하였답니다^^
+나중에는 컵에 작은 동물 인형을  넣어보고
+까꿍놀이를 해보며  확장해서 놀이도 해보았어요~
+우리찬우는 종이컵 두개를 양손에 들고
+탐색해보며 즐거워하네요
+선생님이 머리위에 올려놓고
+"안녕하세요~"하고 인사를 하며 종이컵이 바닥에 떨어지자 재미있는지 크게 웃으며 
+좋아했답니다^^
+
+유모차를 타고 산책을 해보았어요
+우리찬우 여기저기 둘러보며 신났어요~
+점심도 먹고 양치질도 잘하고 기분좋게
+잠들었답니다~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210526_063021">
+<div class="day-header">
+  <span class="day-badge">Day 50</span>
+  <span class="day-title">🌸 2021년 5월 26일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">기분좋게 등원한 우리찬우~
+오전간식으로 나온 요플레
+두숟가락정도 먹고는 고개를 돌리네요
+아몬드는 맛있었는지 조금 먹었구요~
+잘 놀다가 잠이 왔는지 등뒤에 매달리며
+칭얼댔어요
+놀이로 몇번을 유도해도 잠이 자고 싶었나봐요
+업어주니 금방 잠이 들었어요
+자고 일어나서 밥을 주었는데
+요즘 식욕이 별로인지 잘 먹지 않았어요ㅠㅠ
+그래도 잠자고 일어나니 기분이 좋아졌답니다~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210527_090937">
+<div class="day-header">
+  <span class="day-badge">Day 51</span>
+  <span class="day-title">🌸 2021년 5월 27일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(50,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(50,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210527_090937/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🌷오늘은 굿네이버스에서 오셔서 성폭력 예방 인형극을 보여주셨어요. 낯선 환경에서 무서워하거나  울면 어쩌지하고 걱정했는데 걱정과 달리 너무 재미나게 보았네요.  우리 사랑반은 다른 사람 몸을 만지면 안돼요! 정도의 이야기만~ 집에서 해주셔도 좋을 것 같아요~^^*
+
+우리 찬우가 특히 신이 나서
+소리를 지르고 집중해서 봤어요~ㅎㅎ
+잘 버티다가
+점심시간이 되니 잠투정을 하네요ㅠㅠ
+몇숟가락 먹고는 도저히 안되겠나봐요
+잠이 들었답니다~
+일어나서 보니 밥을 물고 잤네요..
+오전간식으로 죽한그릇 잘 먹고
+응가도 잘하고 엉덩이도 잘 씻었답니다~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210528_053136">
+<div class="day-header">
+  <span class="day-badge">Day 52</span>
+  <span class="day-title">🌸 2021년 5월 28일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">☀️오늘 우박을 동원한 비가 온다더니 아침에는 날씨가 너무 좋네요~
+친구와 손잡고 산책을 해보았어요
+빨간 장미꽃 하얀 나비~ 관찰할 자연물이 너무 많아서인지 호기심가득한 시간이었답니다^^
+
+🌩근데 낮잠시간에 갑자기 어두워지더니 바람도 쌩쌩 불고 비가 내리네요..
+낮잠잘때는 어두워서 일찍 자기는 했는데
+간혹 천둥소리에 깼다가 다시 잠들기도 했답니다.
+
+🎂생일파티도 했어요~
+ 친구의 생일이지만 그것보다 더 좋은 건 케이크였나 봐요. 케이크를 보며 우르르 앞으로 몰려오네요ㅋㅋ
+맛있는 케이크~ 오후간식으로  친구들과 함께 나눠 먹도록할께요~^^
+
+남은하루도 안전하게 보내셔요~♡</div>
+</div>
+</div>
+
+<div class="day-section" id="20210531_063154">
+<div class="day-header">
+  <span class="day-badge">Day 53</span>
+  <span class="day-title">🌸 2021년 5월 31일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(52,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210531_063154/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(52,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210531_063154/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(52,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210531_063154/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(52,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210531_063154/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(52,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210531_063154/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(52,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210531_063154/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">즐거운 주말 보내셨나요~😊
+
+오늘은 급식지원센터에서 오셔서 
+컬러푸드 영양교육을 해주셨어요~^^
+여러가지 색깔속에 들어있는
+영양소에 대해 알아보고
+우리몸을 건강하게 해주는 컬러음식에
+대해서도 알아보았답니다^^
+
+교육을 듣고 알록달록 채소와 과일공을
+통속에서 골라 이름을 말해보고
+같은 색깔통속에
+쏘옥~넣어보는 활동도 해보며
+재미있어했답니다^^
+
+👉내일은 양파캐기를 합니다
+활동하기 편안한 복장과 신발 부탁드립니다</div>
+</div>
+</div>
+</div>
+
+<div class="month-section" id="m202106">
+<div class="month-header">
+  <div class="month-title">2021년 6월 ✨</div>
+  <span class="month-stats">📅 22일 · 📸 100장</span>
+</div>
+
+<div class="day-section" id="20210601_062344">
+<div class="day-header">
+  <span class="day-badge">Day 54</span>
+  <span class="day-title">🌸 2021년 6월 1일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(53,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210601_062344/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(53,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210601_062344/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(53,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210601_062344/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(53,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210601_062344/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🧅오늘은 양파캐기를 해보았어요~
+초록색의 기다란 잎줄기를 잡고
+선생님과 함께
+쏘옥 뽑아보았답니다^^
+뽑은 양파가 신기한지 한참을 바라보네요ㅎㅎ
+보내드리는 사진 보시며 이야기 나누어보시고 잘했다고 칭찬도 많이 해주세요~^^
+
+👉이번주 금요일에 계획된 소방대피훈련이
+비소식으로 인해 당겨져 내일 실시할
+예정입니다
+여벌양말 챙겨서 보내주세요~
+
+👉6월 교육활동 동의서 안내문 보내드립니다
+작성하셔서 내일까지 꼭 보내주시기 바랍니다~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210602_053102">
+<div class="day-header">
+  <span class="day-badge">Day 55</span>
+  <span class="day-title">🌸 2021년 6월 2일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(54,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210602_053102/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(54,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210602_053102/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(54,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210602_053102/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(54,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210602_053102/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🥁오늘은 북을 두드려보며 소리를
+탐색해보았어요~
+큰소리도 만들어 보고 작은 소리도 만들어 보며 흥미롭게 활동해보는  찬우랍니다^^ 
+
+🐷다양한 동물소리가 나는 퍼즐도 맞추어보며
+동물이름도 말해보고 울음소리도 흉내내보았어요~
+그림에 맞게 동물퍼즐을 이리저리 돌려가며
+맞추기에 성공~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210603_054020">
+<div class="day-header">
+  <span class="day-badge">Day 56</span>
+  <span class="day-title">🌸 2021년 6월 3일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">☔시원하게 비가 내리는 목요일입니다~~~~😊
+
+오늘은 "우리모두 다함께 손뼉을~짝짝"
+노래부르며 손뼉도 쳐보고 발도 굴러보고
+윙크도 해보고 인사도 해보며 즐거운 활동해보았답니다^^
+아직 윙크가 잘되지않으니 두눈을 찡긋하는 모습이 무척이나 사랑스러웠어요~🥰
+
+종이컵으로 전화기 놀이도 해보았어요
+" 아빠~"를 얼마나 불러보는지~ㅎㅎ
+불러만봐도 기분좋은가봐요~~
+
+오늘도 소리나는 퍼즐을 맞추어보며
+소리도 탐색해보고 동물과 탈것들의
+이름도 알아보며 집중하는 시간을
+가져보았답니다~^^
+가정에서도 소리에 관심을 갖고
+함께 의성어로 말해주면
+언어발달에 많은 도움이 될것같아요~^^
+
+우리찬우 콧물이 많ㅇㅣ 났어요
+귀가전에는 기침도 보였답니다
+살펴봐주세요~
+그래도 오전간식이랑 점심은 정량  잘 먹었답니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210604_054009">
+<div class="day-header">
+  <span class="day-badge">Day 57</span>
+  <span class="day-title">🌸 2021년 6월 4일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">비가 내리고 나서인지 상쾌하게 느껴지는 금요일입니다~😊
+
+오늘은 곡물마라카스를 흔들어 보며 소리를 탐색해보았어요~
+쌀과 콩이 들어 있는 통을 흔들어보며
+소리를 비교해보기도 하고
+신나게 흔들며 노래도 불러보았답니다^^
+
+상쾌한 바람이 솔솔~
+산책도 해보았어요~
+주변에서 어떤 소리가 나는지 귀기울이며
+걸어보았답니다
+고양이 울음소리도 들어보고
+멀리 지나가는 기차소리, 자동차소리,새소리를 들어보며 이야기도 나누어보았답니다^^
+
+집에서는 어떤 소리를 들어볼수있을까요?
+주말동안 다양한 소리를 들어볼수 있도록
+관심 가져주시구요~
+즐거운 주말보내세요~~^^
+
+우리찬우 콧물나더니 오늘은 기침도 가끔씩했구요~
+등원할때보니 이마도 빨갛고 얼굴에 상처도 있네요..
+살펴봐주세요~~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210607_062707">
+<div class="day-header">
+  <span class="day-badge">Day 58</span>
+  <span class="day-title">🌸 2021년 6월 7일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">즐거운 주말 보내셨나요~😊
+오늘은 함께 새 노래 [예쁜 종소리]를 들어보며 함께 박자에 맞춰 손바닥 쳐보시기, 바닥 쳐보기를 해보았어요. 
+신이 났는지 엉덩이 실룩쌜룩~ 
+흥이 많은 하루였답니다~^^
+
+우리 찬우 콧물이 지난주보다 많이 좋아졌네요~
+가끔씩 코를 부비며 짜증을 내기는 했지만
+잘놀았구요
+점심시간이 되니 잠이 왔나봐요
+세숟가락 정도 먹고는 잠이 들었답니다~
+
+내일은 고구마 심기하는 날입니다. 편안한 옷과 신발 신겨서 보내주세요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210608_054008">
+<div class="day-header">
+  <span class="day-badge">Day 59</span>
+  <span class="day-title">🌸 2021년 6월 8일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(58,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(58,10)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210608_054008/image_10.jpg" alt="사진 11" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">오늘은 고구마 심기 활동을 해보았어요. 처음 활동할 때와 달리 모종삽을 들고 적극적으로 심기 활동을 하네요. ^^
+“이제 흙으로 덮어주자”하고 했더니 손에 들고 있는 고구마 순에 흙을 덮어 주는 거 있죠~^^ 
+이해는 달랐지만 너무 순수한 모습에 웃음이 터져버렸답니다😊
+
+🎶[예쁜 종소리] 노래를 부르며 핸드벨도 흔들어보았어요~
+우리찬우  신이 났네요ㅎㅎ
+오전간식먹고 응가도 잘하고
+점심도 잘먹고 기분좋게 잠들었어요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210609_054010">
+<div class="day-header">
+  <span class="day-badge">Day 60</span>
+  <span class="day-title">🌸 2021년 6월 9일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(59,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210609_054010/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(59,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210609_054010/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🐸오늘은 원내 인형극[청개구리]을 보았어요. 
+인형극 시작 전 개구리 노래를 부르니 흥겨웠는지 박수를 치며 좋아했답니다. 하지만~😥 
+극 전개가 되고 극 중에 뱀이 나올 때는 무서웠는지 싫다고 표현을 하네요~ㅎㅎ 😄즐거운 인형극도 보고 개굴개굴 노래도 부르며 엄마 말씀 잘 듣기로 약속해보았답니다~^^
+처음 어린이집에 와서 인형극 볼 때와 다르게 엄청 집중하며 관람하는 걸 보니 많이 성장함을 느낍니다~^^
+
+우리찬우 오늘은 등원해서부터
+잠이 오는지 눈을 비비며 자꾸만 밖에 나가자고 하네요~
+인형극보여주려고 잠을 쫓고 쫓아
+인형극보기에 성공~
+그러나 점심먹으려고 하자 등뒤에 붙어서
+업어달라며 많이 보챘답니다
+업으니 금방 잠이 들었어요
+잠을 많이도 참았나봐요
+밥도 못먹고 꿈나라로 간 찬우랍니다~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210610_055139">
+<div class="day-header">
+  <span class="day-badge">Day 61</span>
+  <span class="day-title">🌸 2021년 6월 10일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(60,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210610_055139/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(60,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210610_055139/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">우리찬우 요즘은 스스로 놀잇감도 선택해서 놀아달라는 표현도하고 친구들과의 놀이에도 부쩍 관심을 보이네요. ^^ 
+앉아서 함께 놀이하는 방법을 알려주면 좋을 것 같아요. 사물의 이름도 하나씩 말해주면서 놀아준다면 언어발달에도 큰 도움이 될 거랍니다. 
+
+오늘은 안전교육으로 장애인식 교육을 해보았답니다. 
+가정에서도 주위에서 볼수있는 몸이 불편한 사람들을 보았을때  자연스럽게 이야기해주시면 많은 도움이 될듯합니다^^
+
+이제는 잠이 오면 손을 잡고 언어영역 매트에 가서 쿠션에 누워 눈을 비비네요
+같이 누워 장난을 쳐주면 까르르 웃음짓는 찬우에요~
+뒹굴뒹굴하다가 선생님이 다른 친구들과
+놀고있으면 일어나서 다시 손을 잡고
+끌고 가네요 ㅎㅎ
+선생님을 혼자서 독차지하고 싶은
+욕심꾸러기~~귀염둥이에요~~🥰
+
+점심도 잘 먹고 아직까지 잘때는 업어야지 잠드네요~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210611_054005">
+<div class="day-header">
+  <span class="day-badge">Day 62</span>
+  <span class="day-title">🌸 2021년 6월 11일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(61,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210611_054005/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(61,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210611_054005/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(61,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210611_054005/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(61,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210611_054005/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(61,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210611_054005/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(61,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210611_054005/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🌿오늘은 곡물을 이용한 마라카스 만들기를 해보았어요. 
+곡물을 넣어 흔들어 보며 소리도 탐색해보구요~
+알록달록 스티커를 사용해서 멋진 마라카스 완성~😄
+신나는 노래 들으며 멋진 연주 놀이도 해보며 즐거워했답니다~
+
+우리찬우 신발신고 걸으며 산책도 해보았어요~
+걷다가 업다가 안다가~ㅎㅎ
+호기심이 많은 우리찬우 손을 잡고 앉으라하더니 선생님보고 무엇이든 만져보라고 하네요~
+산책이 끝나고 밥먹으러 가자고 하니
+다시 신발 신겨달라고~~ㅎㅎ
+점심을 많이 먹지는 않았지만
+기분좋게 잠들었답니다~~
+
+즐거운 주말보내세요~~~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210614_054018">
+<div class="day-header">
+  <span class="day-badge">Day 63</span>
+  <span class="day-title">🌸 2021년 6월 14일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">주말 잘 보내셨나요~😊
+이번주는 "맡아보아요"를 주제로
+다양한 활동으로 놀이할 예정입니다
+오늘은 오전간식으로 방울 토마토를 먹어보며 냄새를 맡아보았어요~
+"멋쟁이 토마토"노래도 같이 불러보며
+신나게 향기나는 스카프도 흔들어보았답니다~^^
+우리 찬우 방울토마토 너무 잘먹었구요~
+점심은 잠투정때문에 조금 남겼어요
+그래도 오늘은 이불에 누워서 잠들었답니다
+칭찬해주세요~~~🥰🥰🥰
+
+내일은 샌드아트 마술쇼 공연이 있습니다
+9시30분까지 등원 부탁드릴께요^^
+
+수요일은 체리따기 체험활동을 갑니다
+참석여부를 문자로 보내주시기바랍니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210615_054016">
+<div class="day-header">
+  <span class="day-badge">Day 64</span>
+  <span class="day-title">🌸 2021년 6월 15일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🎩오늘은 샌드아트 &amp; 마술쇼 공연을 관람해보았어요~
+신기하게 변해가는 모래그림을 집중하며 보기도하고 아직 이해는 가지 않지만
+형님들의 함성소리에 따라서 손뼉도
+쳐보기도 해보며 재미난 시간을 보냈답니다^^
+
+우리찬우는 오늘 컨디션이 별로에요ㅠㅠ
+지난번 인형극은 잘봤는데 오늘 공연은 안보려했어요..
+업어주어도 나가자고하고..
+콧물때문에 더 짜증이 난것같아요
+잠잘때도 코를 비비며 뒤척였답니다ㅠㅠ
+내일은 컨디션 좋기를 기대해봅니다~
+
+🍒내일은 체리따기 체험활동을 갑니다
+비소식이 있기는 하지만
+제발 체험활동할때만 피해주었으면 하는 바램입니다~
+어린이날에 보내드린 진분홍색 반팔티셔츠에 편안한 긴바지와 신발 부탁드립니다~^^
+야외활동을 갈때는 반바지보다 긴바지 입혀서 보내주세요
+넘어져서 무릎을 다칠수도 있고 모기한테
+물릴수도 있답니다~</div>
+</div>
+</div>
+
+<div class="day-section" id="20210616_054010">
+<div class="day-header">
+  <span class="day-badge">Day 65</span>
+  <span class="day-title">🌸 2021년 6월 16일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(64,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,10)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_10.jpg" alt="사진 11" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,11)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_11.jpg" alt="사진 12" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,12)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_12.jpg" alt="사진 13" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,13)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_13.jpg" alt="사진 14" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,14)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_14.jpg" alt="사진 15" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,15)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_15.jpg" alt="사진 16" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(64,16)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210616_054010/image_16.jpg" alt="사진 17" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🍒체리따기 체험활동 잘 다녀왔어요~~
+다행스럽게 비도 안내리고
+새벽에 내린 비로인해 신발이 조금 젖기는 했지만 너무 신나하는 찬우랍니다~~😊
+체리를 따서 냄새도 맡아보고
+맛있게 먹어보며 기분좋은 하루 보내고 갑니다~^^
+
+우리찬우 체험장으로 이동하는 차안에서
+잠잤구요
+도착해서는 기분이 좋아져 체리를 이리저리 들고 다녔어요~ㅎㅎ
+점심도 잘 먹고 기분좋게 이불에 누워 잠들었답니다^^
+근데 코를 비비다가 손톱에 긁혔어요
+약은 발라주었는데 살펴봐주세요~~ㅠㅠ
+
+오늘 딴 체리 가방에 넣어보내드리니
+잘 땄다고 칭찬 많이 해주시고
+맛있게 드세요~~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210617_054019">
+<div class="day-header">
+  <span class="day-badge">Day 66</span>
+  <span class="day-title">🌸 2021년 6월 17일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(65,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210617_054019/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(65,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210617_054019/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(65,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210617_054019/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(65,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210617_054019/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(65,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210617_054019/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(65,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210617_054019/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">찬우표 체리는 맛있게 드셨나요~🍒
+
+🫑오늘은 쾅쾅 채소도장찍기를 해보았어요~
+다양한 채소와 과일 그림이 있는 도장에
+스탬프를 묻혀 콩콩 찍어보며 재미있어했답니다^^
+
+시장바구니에다 채소와 과일모형들을
+담아보며 시장놀이도 해보았어요~
+욕심을 부리며 서로 많이 담으려하기도 했답니다~ㅎㅎ
+"수박수박이 나왔어요~~ "하며
+시장잔치노래를 불러주자
+악기들을 하나씩 가져와 신나게  흔들어보았답니다~😊
+
+우리찬우 코를 자주 비벼 얼굴이 빨개졌다 괜찮아졌다하네요ㅠㅠ
+오늘도 콧물 보였구요~
+빨리 낫기를 바래봅니다^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210618_062304">
+<div class="day-header">
+  <span class="day-badge">Day 67</span>
+  <span class="day-title">🌸 2021년 6월 18일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🍑오늘은 과일향기가 나는 종이위에 색연필로 자유롭게 끼적여보았어요~
+깡총토끼도 그려주고 꿀꿀돼지도 그려주었더니 자꾸자꾸 그리라고 손가락으로 톡톡 가리키네요ㅎㅎ
+
+👐재난안전교육으로 손씻기에 대해서도 알아보았어요
+손을 왜 씻어야하는지 어떨때 손을 씻어야하는지 그리고 깨끗하게 손씻는 방법에 대해서도 알아보았답니다
+그리고는 스스로 손을 씻어볼수 있도록 활동해보았어요
+집에서도 스스로 손을 씻어볼수 있는 기회를 주시는것도 성취감을 느껴볼수 있는 좋은 경험이 될것입니다
+도전~~해보시구요
+자주 손씻는 습관도 길러주세요~
+즐거운 주말 보내세요~~~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210621_054008">
+<div class="day-header">
+  <span class="day-badge">Day 68</span>
+  <span class="day-title">🌸 2021년 6월 21일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(67,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210621_054008/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(67,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210621_054008/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">☀️주말 잘 보내셨나요? 주말 동안 즐거웠는지 기분 좋게 웃으면서 등원하네요~^^ 덩달아 기분 좋은 아침이었답니다. 😄
+
+🧅오늘은 [코로 향기를 맡아보아요]라는 주제로 활동을 해보았어요.
+ “코로 냄새를 맡는 거지?”라고 얘기했더니 코를 갖다 대며 킁킁킁 다양한 냄새를 맡아보았네요. 
+달콤한 향기, 고소한 냄새 등은 웃으며 냄새를 맡더니 양파 냄새는 싫었는지
+친구들은 고개를 절래 절래 흔드는데
+우리찬우는 먹으려고 입에 갖다댔어요ㅎㅎ
+매운 냄새라고 얘기해주며 함께 관찰해보았답니다~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210622_062131">
+<div class="day-header">
+  <span class="day-badge">Day 69</span>
+  <span class="day-title">🌸 2021년 6월 22일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(68,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210622_062131/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(68,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210622_062131/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">👃오늘은 향기 부채를 이용해서 놀이를 해보았어요. 부채에서 향기가 난다고 이야기를 하자 흔들어 냄새를 맡아보네요~^^ 
+냄새는 코로 맡는다며 코를 잡더네요 ㅎㅎ 친구에게 부채질도 해주며 신나는 하루 보내고 갑니다. 
+
+🧸이제는 자기주장이 강해지고 감정표현도 곧잘 하네요. 감정을 바르게 표현할 수 있도록 행동을 조금 더 주의를 기울여 봐주시고 적절한 대응을 해주시면 좋을 것 같습니다~🤗</div>
+</div>
+</div>
+
+<div class="day-section" id="20210623_054004">
+<div class="day-header">
+  <span class="day-badge">Day 70</span>
+  <span class="day-title">🌸 2021년 6월 23일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🤹🏻‍♀️오늘은 안전 인형극 [안전이의 편지] 인형극을 관람했어요. 몇 번 관람을 해본 덕분인지 오늘 인형극에서 늑대가 나오자 안된다고 손짓을 하네요. 스토리에 빠져 열심히 관람을하고 있다는 뜻이겠죠?~^^
+전기사용 등의 유익하고 좋은 내용의 인형극이었답니다. 집에서도 이야기를 나눠보시면 좋을 것 같아요~ 
+
+우리찬우는 사운드소리에 겁이 났는지
+밖에 나가자고~~
+눈물보였어요ㅠㅠ
+선생님등에 업혀 끝날때쯤 다시 들어가 
+조금 보기는 했지만 아쉬운 시간이었어요ㅠㅠ
+
+👕긴팔 여벌 옷을 보내드리오니 짧은 여름옷으로 교체해주세요~
+
+🍎내일은 기다리고 기다리던 원내 시장놀이가 있는 날입니다😁 
+장터 채소•과일가게 등 다양한 코너로 이루어질 예정입니다. 
+즐거운 활동이 될 수 있도록 컨디션 조절 부탁드리고 어린이집 모암 장터 전단지를 보면서 이야기도 함께 나눠주세요~^^ 
+
+우리찬우 요즘 까꿍놀이를 너무 즐거워하네요~
+어제 오늘 깍두기도 잘먹구요 ㅎㅎ
+대견한 찬우에요~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210624_054009">
+<div class="day-header">
+  <span class="day-badge">Day 71</span>
+  <span class="day-title">🌸 2021년 6월 24일</span>
+  <span class="day-date">(목요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(70,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,9)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_9.jpg" alt="사진 10" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,10)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_10.jpg" alt="사진 11" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,11)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_11.jpg" alt="사진 12" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,12)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_12.jpg" alt="사진 13" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,13)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_13.jpg" alt="사진 14" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,14)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_14.jpg" alt="사진 15" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,15)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_15.jpg" alt="사진 16" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,16)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_16.jpg" alt="사진 17" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,17)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_17.jpg" alt="사진 18" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,18)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_18.jpg" alt="사진 19" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,19)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_19.jpg" alt="사진 20" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,20)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_20.jpg" alt="사진 21" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,21)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_21.jpg" alt="사진 22" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,22)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_22.jpg" alt="사진 23" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,23)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_23.jpg" alt="사진 24" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,24)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_24.jpg" alt="사진 25" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,25)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_25.jpg" alt="사진 26" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(70,26)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210624_054009/image_26.jpg" alt="사진 27" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🍉오늘은 즐거운 시장 잔치를 해보았어요. 스스로 물건을 골라 장바구니에 담아보는 기쁨~ 😊
+울 꼬꼬마도 잘할 수 있을까 걱정했는데~
+너무너무 적극적으로 참여를 하면서
+재미있어했답니다~
+칭찬 많이많이 해주시구요~^^
+정말 엄지 척👍이었답니다. 
+집에서 함께 장 봐온 물건으로 이야기
+나누어보시면 좋을것같아요~❤️
+
+우리찬우 머리 자르니까 동글동글
+더 귀여워요~~~🥰🥰🥰</div>
+</div>
+</div>
+
+<div class="day-section" id="20210625_062539">
+<div class="day-header">
+  <span class="day-badge">Day 72</span>
+  <span class="day-title">🌸 2021년 6월 25일</span>
+  <span class="day-date">(금요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🐻‍❄️오늘은 친구들과 함께 합창 놀이를 하며 악기 연주를 해보았어요. 
+동요 메들리에 맞춰 악기도 연주하고 리본 막대도 신나게 흔들어 보았답니다. 
+곰 세 마리 노래가 좋은지 반복적으로 들려달라고 표현을 하네요~
+집에서 많이 듣는 노래인가 봐요~^^ 
+한참동안 노래도 부르며 춤도 춰보며 
+즐거운 시간을 가져보았답니다~
+
+🍑월요일에 자두 따기 체험활동이 있습니다. 
+긴바지에 반팔 모기 패치 하나 정도 붙여주시면 좋을 것 같아요. 
+신발도 편안한 신발로 신겨 보내주시고
+자가등원시  9시 30분까지 등원 꼭 부탁드립니다.
+
+즐거운 주말되세요~😊</div>
+</div>
+</div>
+
+<div class="day-section" id="20210628_054007">
+<div class="day-header">
+  <span class="day-badge">Day 73</span>
+  <span class="day-title">🌸 2021년 6월 28일</span>
+  <span class="day-date">(월요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(72,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(72,8)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210628_054007/image_8.jpg" alt="사진 9" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">주말 잘 보내셨나요?
+🥭자두따기체험 잘 다녀왔어요~~
+고사리같은 손으로 빨갛게 익은 자두를
+따보고 돗자리에 앉아서  맛있게 맛도
+보았어요~
+새콤한맛보다 달콤한 맛이 더 많은
+자두~
+그래서인지 양손에 들고 얼마나
+잘 먹는지~ㅎㅎ
+가방에 한 팩 넣어 보내드려요
+잘했다고 칭찬 많이 해주시고
+맛있게 드세요~~~^^</div>
+</div>
+</div>
+
+<div class="day-section" id="20210629_064324">
+<div class="day-header">
+  <span class="day-badge">Day 74</span>
+  <span class="day-title">🌸 2021년 6월 29일</span>
+  <span class="day-date">(화요일)</span>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🥳오늘은 친구 생일파티했어요~
+친구축하보다 케이크에 관심이 더 많은
+사랑반 귀염둥이들이랍니다ㅎㅎ
+손뼉치며 생일축하 노래도 불러주고
+사진도 찍어보았어요~
+
+어제 자두따기체험한 사진을
+언어영역에 붙여 주었더니 관심을 보이며
+저마다 자기 사진을 가리키네요~
+사진을 보며 자두따기에 대해 이야기나누어보고 여름과일 그림도안에
+열심히 색칠해보며 여러가지 과일이름을 말해보았답니다~😊
+
+우리찬우 김치를 너무 좋아하네요~
+제가 잘못들었는지 찬우가
+김치라고 말한것같아요ㅎㅎ
+까까.안아. 잘하는데 오늘은 김치?ㅎㅎ</div>
+</div>
+</div>
+
+<div class="day-section" id="20210630_054014">
+<div class="day-header">
+  <span class="day-badge">Day 75</span>
+  <span class="day-title">🌸 2021년 6월 30일</span>
+  <span class="day-date">(수요일)</span>
+</div>
+<div class="gallery">
+<div class="gallery-item" onclick="openLightbox(74,0)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_0.jpg" alt="사진 1" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,1)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_1.jpg" alt="사진 2" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,2)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_2.jpg" alt="사진 3" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,3)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_3.jpg" alt="사진 4" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,4)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_4.jpg" alt="사진 5" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,5)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_5.jpg" alt="사진 6" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,6)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_6.jpg" alt="사진 7" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+<div class="gallery-item" onclick="openLightbox(74,7)"><img src="https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/20210630_054014/image_7.jpg" alt="사진 8" loading="lazy"><div class="overlay"><span class="overlay-icon">🔍</span></div></div>
+</div>
+<div class="diary-card">
+<div class="diary-label">📝 선생님 알림장</div>
+<div class="diary-text">🥤오늘은 과일쥬스로 여러가지 과일그림도안에 색칠을 해보았어요~
+과일쥬스가 묽어서 색깔이 잘 안나오자
+자꾸 붓을 쥬스통에 담가보네요ㅎㅎ
+그래도 붓으로 활동하는 재미가 있는지
+붓을 놓으려하지 않았답니다~^^
+
+🥯천사점토로 빵을 만들어 보았어요~
+구멍이 있는 링도너츠도 만들어보고
+동글동글한 빵 길쭉길쭉한 빵등
+다양한 모양빵을 만들어주었더니
+친구들도 열심히 만들며 집중하는
+모습이었답니다~^^
+
+그런데 우리찬우는 점토 만지는것을
+아직은 거부하네요ㅠㅠ
+언젠가는 친구들처럼 집중하며
+조물조물 하는 날이 오겠죠?~ㅎㅎ</div>
+</div>
+</div>
+</div>
+
+</main>
+
+<footer>
+  <p><span class="heart">♥</span> 우리 찬우의 소중한 어린이집 추억 <span class="heart">♥</span></p>
+  <p style="margin-top:8px;">총 75일 · 278장의 사진 · 2021년</p>
+</footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <div class="lb-wrapper" onclick="event.stopPropagation()">
+    <button class="lb-btn lb-prev" onclick="changeLightbox(-1)">&#10094;</button>
+    <div class="lb-img-wrap">
+      <button class="lb-close" onclick="closeLightbox()">✕ 닫기</button>
+      <img id="lightbox-img" src="" alt="">
+      <div id="lightbox-counter"></div>
+    </div>
+    <button class="lb-btn lb-next" onclick="changeLightbox(1)">&#10095;</button>
+  </div>
+</div>
+
+<script>
+const CDN='https://cdn.jsdelivr.net/gh/hanshin877/jcw-daycare-memories@main/';
+const DAYS=[{"f":"20210309_054217","n":0},{"f":"20210310_055358","n":10},{"f":"20210311_055629","n":4},{"f":"20210312_061521","n":0},{"f":"20210315_082132","n":8},{"f":"20210316_080641","n":4},{"f":"20210317_073952","n":7},{"f":"20210318_072856","n":0},{"f":"20210319_073443","n":0},{"f":"20210322_065446","n":7},{"f":"20210323_053947","n":2},{"f":"20210324_074641","n":9},{"f":"20210325_062611","n":4},{"f":"20210326_065525","n":0},{"f":"20210329_084959","n":2},{"f":"20210330_063010","n":0},{"f":"20210331_063030","n":4},{"f":"20210401_063036","n":0},{"f":"20210402_063156","n":0},{"f":"20210405_063121","n":7},{"f":"20210406_063105","n":6},{"f":"20210407_063012","n":3},{"f":"20210408_063103","n":0},{"f":"20210409_063147","n":8},{"f":"20210412_063149","n":0},{"f":"20210413_063110","n":0},{"f":"20210414_063226","n":3},{"f":"20210415_063151","n":6},{"f":"20210416_063156","n":0},{"f":"20210421_063010","n":2},{"f":"20210422_062520","n":0},{"f":"20210423_062525","n":14},{"f":"20210426_091014","n":0},{"f":"20210427_073946","n":0},{"f":"20210428_073739","n":0},{"f":"20210429_062917","n":6},{"f":"20210430_064752","n":0},{"f":"20210504_062331","n":14},{"f":"20210506_062136","n":0},{"f":"20210507_063222","n":1},{"f":"20210510_065810","n":0},{"f":"20210511_062503","n":7},{"f":"20210512_054801","n":0},{"f":"20210513_055830","n":0},{"f":"20210514_065001","n":12},{"f":"20210517_062423","n":0},{"f":"20210518_062055","n":2},{"f":"20210524_062044","n":4},{"f":"20210525_062155","n":8},{"f":"20210526_063021","n":0},{"f":"20210527_090937","n":8},{"f":"20210528_053136","n":0},{"f":"20210531_063154","n":6},{"f":"20210601_062344","n":4},{"f":"20210602_053102","n":4},{"f":"20210603_054020","n":0},{"f":"20210604_054009","n":0},{"f":"20210607_062707","n":0},{"f":"20210608_054008","n":11},{"f":"20210609_054010","n":2},{"f":"20210610_055139","n":2},{"f":"20210611_054005","n":6},{"f":"20210614_054018","n":0},{"f":"20210615_054016","n":0},{"f":"20210616_054010","n":17},{"f":"20210617_054019","n":6},{"f":"20210618_062304","n":0},{"f":"20210621_054008","n":2},{"f":"20210622_062131","n":2},{"f":"20210623_054004","n":0},{"f":"20210624_054009","n":27},{"f":"20210625_062539","n":0},{"f":"20210628_054007","n":9},{"f":"20210629_064324","n":0},{"f":"20210630_054014","n":8}];
+let curDay=-1,curImg=-1;
+function updateArrows(){
+  document.querySelector('.lb-prev').disabled=curImg<=0;
+  document.querySelector('.lb-next').disabled=curImg>=DAYS[curDay].n-1;
+}
+function openLightbox(d,i){
+  curDay=d;curImg=i;
+  document.getElementById('lightbox-img').src=CDN+DAYS[d].f+'/image_'+i+'.jpg';
+  document.getElementById('lightbox-counter').textContent=(i+1)+' / '+DAYS[d].n;
+  document.getElementById('lightbox').style.display='flex';
+  document.body.style.overflow='hidden';
+  updateArrows();
+}
+function changeLightbox(dir){
+  let ni=curImg+dir;
+  if(ni<0||ni>=DAYS[curDay].n)return;
+  curImg=ni;
+  document.getElementById('lightbox-img').src=CDN+DAYS[curDay].f+'/image_'+ni+'.jpg';
+  document.getElementById('lightbox-counter').textContent=(ni+1)+' / '+DAYS[curDay].n;
+  updateArrows();
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display='none';
+  document.body.style.overflow='';
+}
+function jumpTo(sel){
+  if(sel.value){document.querySelector(sel.value)?.scrollIntoView({behavior:'smooth'});sel.value='';}
+}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('lightbox').style.display==='flex'){
+    if(e.key==='ArrowLeft')changeLightbox(-1);
+    else if(e.key==='ArrowRight')changeLightbox(1);
+    else if(e.key==='Escape')closeLightbox();
+  }
+});
+const tabs=document.querySelectorAll('.month-tab');
+const sections=document.querySelectorAll('.month-section');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      tabs.forEach(t=>t.classList.toggle('active',t.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=>obs.observe(s));
+window.addEventListener('scroll',()=>{
+  document.getElementById('back-top').style.display=window.scrollY>400?'flex':'none';
+});
+</script>
+</body>
+</html>
