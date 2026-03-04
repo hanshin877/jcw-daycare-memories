@@ -15,8 +15,12 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout main
+      - name: Checkout main (index.html only)
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            index.html
+          sparse-checkout-cone-mode: false
 
       - name: Deploy only index.html to gh-pages
         run: |
