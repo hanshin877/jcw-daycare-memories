@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - 'index.html'
-
   workflow_dispatch:
 
 jobs:
@@ -16,14 +15,25 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
 
-      - name: Deploy index.html to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          include_files: index.html
-          publish_branch: gh-pages
-          commit_message: "Deploy index.html [skip ci]"
+      - name: Deploy only index.html to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          mkdir -p /tmp/deploy
+          cp index.html /tmp/deploy/index.html
+          touch /tmp/deploy/.nojekyll
+
+          git fetch origin gh-pages 2>/dev/null || true
+          git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
+
+          cp /tmp/deploy/index.html ./index.html
+          cp /tmp/deploy/.nojekyll ./.nojekyll
+
+          git add index.html .nojekyll
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Deploy index.html [skip ci]"
+          git push origin gh-pages
